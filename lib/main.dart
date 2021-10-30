@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hack_tx_2021/problems.dart';
-import 'distance.dart';
+import 'package:hack_tx_2021/pages/problems.dart';
+import 'pages/distance.dart';
 
 import './pages/login.dart';
-
-
 
 void main() {
   runApp(MyApp());
@@ -28,9 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-
       home: LoginPage(),
-
     );
   }
 }

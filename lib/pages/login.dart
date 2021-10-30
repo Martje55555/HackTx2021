@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import './problems.dart';
 
 final FlutterAppAuth appAuth = FlutterAppAuth();
 final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
@@ -116,9 +117,9 @@ class _LoginPage extends State<LoginPage> {
         body: Center(
           child: isBusy
               ? CircularProgressIndicator()
-              : isLoggedIn
-                  ? Profile(logoutAction, name, picture)
-                  : Login(loginAction, errorMessage),
+              : Login(loginAction, errorMessage),
+          //? //Profile(logoutAction, name, picture)
+          //: Login(loginAction, errorMessage),
         ),
       ),
     );
@@ -175,6 +176,8 @@ class _LoginPage extends State<LoginPage> {
         isLoggedIn = true;
         name = idToken['name'];
         picture = userProfile['picture'];
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Problems()));
       });
     } catch (e, s) {
       print('error: $e - stack: $s');
