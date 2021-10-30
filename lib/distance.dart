@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_tx_2021/global.dart';
+import 'conversion.dart';
 
 class DistancePage extends StatefulWidget{
   @override
@@ -7,8 +8,10 @@ class DistancePage extends StatefulWidget{
 }
 
 class _DistancePage extends State<DistancePage>{
-  String dropDownValue ='Select';
-  String secdropDownValue ='Select';
+   navigateToConversionPage() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ConversionPage()));
+  }
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -62,13 +65,22 @@ class _DistancePage extends State<DistancePage>{
                 onChanged: (value){
                   setState(() {
                     secdropDownValue = value!;
-                   
                   });
                 }
-                ),  
+                ),
               ],
             )
           ),
+         Column(
+            children: [
+               ElevatedButton(
+                  child: Text(
+                    "Continue",),
+                    onPressed: () {
+                      navigateToConversionPage();
+                    }),
+                  ]
+                )
         ],
       )
      )
