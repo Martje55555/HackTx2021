@@ -7,6 +7,8 @@ class DistancePage extends StatefulWidget{
 }
 
 class _DistancePage extends State<DistancePage>{
+  String dropDownValue ='Select';
+  String secdropDownValue ='Select';
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -29,25 +31,27 @@ class _DistancePage extends State<DistancePage>{
            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
            children: [
               DropdownButton<String>(
-                value: dropDownValue,
+               value: dropDownValue,
                 style: TextStyle(color: Colors.black),
-                items: <String>['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'].map<DropdownMenuItem<String>>(
+                 onChanged:(String? newvalue){
+                  setState(() {
+                    dropDownValue = newvalue!;
+                  });
+                },
+                items: <String>['Select','Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'].map<DropdownMenuItem<String>>(
                   (String value){
                   return DropdownMenuItem<String>(
                      value: value,
                      child: Text(value),
                   );
                 }).toList(),
-                hint: Text('Dropdown'),
-                onChanged: ( value){
-                  setState(() {
-                    dropDownValue = value;
-                  });
-                }
+               // hint: Text('Dropdown'),
+               
                 ),
                 DropdownButton<String>(
-               value: secdropDownValue,
-                items: <String>['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'].map<DropdownMenuItem<String>>(
+                value: secdropDownValue,
+                style: TextStyle(color: Colors.black),
+                items: <String>['Select','Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'].map<DropdownMenuItem<String>>(
                   (String value){
                   return DropdownMenuItem<String>(
                      value: value,
@@ -57,7 +61,8 @@ class _DistancePage extends State<DistancePage>{
                 hint: Text('Dropdown'),
                 onChanged: (value){
                   setState(() {
-                    secdropDownValue = value;
+                    secdropDownValue = value!;
+                   
                   });
                 }
                 ),  
