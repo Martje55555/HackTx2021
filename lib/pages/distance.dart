@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'global.dart';
-import 'problems.dart';
+import '../global.dart';
+import './problems.dart';
 import 'conversion.dart';
 
 class DistancePage extends StatefulWidget {
