@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import './distance.dart';
 
 class Problems extends StatefulWidget {
   @override
@@ -24,7 +25,12 @@ class _Problems extends State<Problems> {
                 margin: EdgeInsets.only(bottom: 250.0, top: 250.0),
                 padding: EdgeInsets.only(left: 15.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DistancePage()));
+                  },
                   child: Text(
                     'Distances',
                     style: TextStyle(fontSize: 20),
