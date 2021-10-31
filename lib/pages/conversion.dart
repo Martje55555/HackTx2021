@@ -10,12 +10,15 @@ class ConversionPage extends StatefulWidget {
 
 class _ConversionPage extends State<ConversionPage> {
   double temp = totalDistance(distance1, distance2);
+
   //String res = temp.toStringAsPrecision(3);
   String url1 = urlfirst;
   String url2 = urlsecond;
   @override
   Widget build(BuildContext context) {
-    String res = temp.toStringAsPrecision(3);
+    String res = temp.toStringAsPrecision(3);  
+    double speed = distanceinSpeedofLight(temp);
+    String speedLight = speed.toStringAsPrecision(3);
     return Scaffold(
         backgroundColor: Color(0xff4C748B),
         appBar: AppBar(
@@ -78,8 +81,19 @@ class _ConversionPage extends State<ConversionPage> {
                     //padding: EdgeInsets.only(left: 15.0),
                     child: Image.network(url2),
                   )
-                ]))
-          ])),
+                ])),
+                 Column(
+                  children: [Text(
+                    'It would take '
+                          '$speedLight' +
+                      ' minues to travel from $dropDownValue to $secdropDownValue at the speed of light',
+                      textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                  )]
+          )])),
         ));
   }
 }

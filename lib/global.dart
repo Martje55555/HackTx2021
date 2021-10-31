@@ -47,3 +47,9 @@ double totalDistance(double x, double y) {
 
   return result;
 }
+
+double distanceinSpeedofLight(double i){
+  double speed = 0;
+  speed = ((i*light_year)/186000)/60;
+  return speed;
+}
