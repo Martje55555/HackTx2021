@@ -41,6 +41,11 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  assets:
+    - lib/image/istockphoto-1267065396-170667a.jpg
+    - lib/image/giphy-downsized-large.gif
+    - lib/image/181105-light-year-al-1550.jpg
+    - lib/image/giphy_astrounaut.gif
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

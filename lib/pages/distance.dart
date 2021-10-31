@@ -44,10 +44,26 @@ class _DistancePage extends State<DistancePage> {
             ],
             title: Text("Distance From Two Objects")),
         backgroundColor: Color(0xff4C748B),
-        body: Center(
+        body: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("lib/image/istockphoto-1267065396-170667a.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            
+        child: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("lib/image/istockphoto-1267065396-170667a.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             Text("Distance in Light Years",
                 style: TextStyle(
                     fontFamily: "Norwester",
@@ -209,6 +225,6 @@ class _DistancePage extends State<DistancePage> {
                       : null),
             ])
           ],
-        )));
+        ))),);
   }
 }
