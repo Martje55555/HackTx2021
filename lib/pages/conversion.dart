@@ -52,7 +52,7 @@ class _ConversionPage extends State<ConversionPage> {
             child: Image.network(url1
         ),),
         Container(
-           width: 100,
+          width: 100,
           height: 100,
         child: Image.network(url2
         ),)
