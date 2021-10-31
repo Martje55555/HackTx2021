@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../global.dart';
+import './login.dart';
 import './distance.dart';
 
 class ConversionPage extends StatefulWidget {
@@ -18,12 +19,23 @@ class _ConversionPage extends State<ConversionPage> {
       appBar: AppBar(
           backgroundColor: Colors.blue,
           leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios),
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          actions: [
+            TextButton(
+              child: Text("Log Out", style: TextStyle(color: Colors.black)),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DistancePage()));
-              }),
-          title: Text("Distance")),
+                isWhat = false;
+                empty = "";
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => LoginPage()));
+              },
+            ),
+          ],
+          title: Text("Conversion Page")),
       body: Center(
           child: Column(children: <Widget>[
         Text(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../global.dart';
 import './problems.dart';
-import 'conversion.dart';
+import './conversion.dart';
+import './login.dart';
 
 class DistancePage extends StatefulWidget {
   @override
@@ -27,9 +28,20 @@ class _DistancePage extends State<DistancePage> {
             leading: IconButton(
               icon: Icon(Icons.arrow_back_ios),
               onPressed: () {
-                navigateToProblems();
+                Navigator.pop(context);
               },
             ),
+            actions: [
+              TextButton(
+                child: Text("Log Out", style: TextStyle(color: Colors.black)),
+                onPressed: () {
+                  isWhat = false;
+                  empty = "";
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+              ),
+            ],
             title: Text("Distance From Two Objects")),
         backgroundColor: Color(0xff4C748B),
         body: Center(

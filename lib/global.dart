@@ -1,5 +1,7 @@
 library global;
 
+bool isWhat = false;
+String empty = "";
 double light_year = 5879000000000;
 String dropDownValue = 'Select';
 String secdropDownValue = 'Select';
