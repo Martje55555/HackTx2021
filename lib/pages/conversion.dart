@@ -9,7 +9,8 @@ class ConversionPage extends StatefulWidget {
 
 class _ConversionPage extends State<ConversionPage> {
   double res = totalDistance(distance1, distance2);
-  String xd = url_sun;
+  String url1 = urlfirst;
+  String url2 = urlsecond;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +30,22 @@ class _ConversionPage extends State<ConversionPage> {
           '$res' + 'light years',
           style: TextStyle(fontSize: 20),
         ),
-        Image.network(
-          xd,
-          color: Colors.transparent,
-        ),
+        Container(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Container(
+               width: 100,
+          height: 100,
+            child: Image.network(url1
+        ),),
+        Container(
+           width: 100,
+          height: 100,
+        child: Image.network(url2
+        ),)
+          ]
+         ))
       ])),
     );
   }

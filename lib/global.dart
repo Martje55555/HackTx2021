@@ -13,9 +13,12 @@ double SuntoUranus = 1784000000;
 double SuntoNeptune = 2794400000;
 double distance1 = 0.0;
 double distance2 = 0.0;
+String urlfirst = '';
+String urlsecond = '';
 String url_sun =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9tBOxVKudwCNBvFdMFNVucgQrvIk-aN0VUQ&usqp=CAU';
-
+    'https://pngimg.com/uploads/sun/sun_PNG13424.png';
+String url_earth =
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/1200px-Earth_Western_Hemisphere_transparent_background.png';
 double totalDistance(double x, double y) {
   double result = 0;
   result = (x - y);
