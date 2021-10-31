@@ -36,10 +36,18 @@ class _ConversionPage extends State<ConversionPage> {
             ),
           ],
           title: Text("Conversion Page")),
-      body: Center(
+      body: 
+      Container(
+        decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("lib/image/181105-light-year-al-1550.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+        child: Center(
           child: Column(children: <Widget>[
         Text(
-          '$res' + 'light years',
+          '$res' + ' light years',
           style: TextStyle(fontSize: 20),
         ),
         Container(
@@ -59,6 +67,6 @@ class _ConversionPage extends State<ConversionPage> {
           ]
          ))
       ])),
-    );
+    ));
   }
 }
