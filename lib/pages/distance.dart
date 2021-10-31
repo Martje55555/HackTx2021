@@ -23,26 +23,28 @@ class _DistancePage extends State<DistancePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-          backgroundColor: Colors.blue,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: [
+          TextButton(
+            child: Text("Log Out",
+                style: TextStyle(color: Colors.white, fontSize: 18)),
             onPressed: () {
-              Navigator.pop(context);
+              isWhat = false;
+              empty = "";
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => LoginPage()));
             },
           ),
-          actions: [
-            TextButton(
-              child: Text("Log Out", style: TextStyle(color: Colors.black)),
-              onPressed: () {
-                isWhat = false;
-                empty = "";
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => LoginPage()));
-              },
-            ),
-          ],
-          title: Text("Distance From Two Objects")),
+        ],
+      ),
       backgroundColor: Color(0xff4C748B),
       body: Container(
           decoration: BoxDecoration(
