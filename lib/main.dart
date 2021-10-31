@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_tx_2021/pages/problems.dart';
+import 'package:hack_tx_2021/pages/splashscreen.dart';
 import 'pages/distance.dart';
 
 import './pages/login.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: SplashScreen(),
     );
   }
 }
