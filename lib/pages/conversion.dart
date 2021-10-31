@@ -84,7 +84,7 @@ class _ConversionPage extends State<ConversionPage> {
               Text(
                 'It would take '
                         '$speedLight' +
-                    ' minues to travel from $dropDownValue to $secdropDownValue at the speed of light',
+                    ' minutes to travel from $dropDownValue to $secdropDownValue at the speed of light',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 24,
