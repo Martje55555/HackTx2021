@@ -136,7 +136,7 @@ class _DistancePage extends State<DistancePage> {
                             }
                             if (dropDownValue == "Venus") {
                               distance1 = SuntoVenus;
-                              urlfirst = url_sun;
+                              urlfirst = url_venus;
                             }
                             if (dropDownValue == "Earth") {
                               distance1 = SuntoEarth;
@@ -172,7 +172,7 @@ class _DistancePage extends State<DistancePage> {
                             }
                             if (secdropDownValue == "Venus") {
                               distance2 = SuntoVenus;
-                              urlsecond = url_sun;
+                              urlsecond = url_venus;
                             }
                             if (secdropDownValue == "Earth") {
                               distance2 = SuntoEarth;
