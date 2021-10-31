@@ -1,7 +1,5 @@
-/// -----------------------------------
-///          External Packages
-/// -----------------------------------
 import 'package:flutter/material.dart';
+import 'package:hack_tx_2021/pages/distance.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_appauth/flutter_appauth.dart';
@@ -13,17 +11,11 @@ import '../global.dart' as globals;
 final FlutterAppAuth appAuth = FlutterAppAuth();
 final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
 
-/// -----------------------------------
-///           Auth0 Variables
-/// -----------------------------------
 const AUTH0_DOMAIN = 'dev-5r1oecp1.us.auth0.com';
 const AUTH0_CLIENT_ID = 'iijIw3oQoqUtz53lmDSCfFIDTO84zQvx';
 const AUTH0_REDIRECT_URI = 'com.auth0.hacktx2021://login-callback';
 const AUTH0_ISSUER = 'https://$AUTH0_DOMAIN';
 
-/// -----------------------------------
-///           Profile Widget
-/// -----------------------------------
 class Profile extends StatelessWidget {
   final logoutAction;
   final String name;
@@ -62,9 +54,6 @@ class Profile extends StatelessWidget {
   }
 }
 
-/// -----------------------------------
-///            Login Widget
-/// -----------------------------------
 class Login extends StatelessWidget {
   final loginAction;
   final String loginError;
@@ -73,33 +62,53 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        ElevatedButton(
-          onPressed: () {
-            loginAction();
-          },
-          child: Text('Login'),
+    return Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("lib/image/giphy-downsized-large.gif"),
+            fit: BoxFit.cover,
+          ),
         ),
-        Text(loginError),
-      ],
-    );
+        child: Center(
+            child: Column(children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top: 150.0),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Welcome To blah blah",
+                style: TextStyle(fontSize: 48, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  fixedSize: Size(225, 50),
+                ),
+                onPressed: () {
+                  loginAction();
+                },
+                child: Text('Login', style: TextStyle(fontSize: 22)),
+              ),
+              Text(loginError),
+            ],
+          )
+        ])));
   }
 }
-
-/// -----------------------------------
-///                 App
-/// -----------------------------------
 
 class LoginPage extends StatefulWidget {
   @override
   _LoginPage createState() => _LoginPage();
 }
-
-/// -----------------------------------
-///              App State
-/// -----------------------------------
 
 class _LoginPage extends State<LoginPage> {
   bool isBusy = globals.isWhat;
@@ -113,9 +122,6 @@ class _LoginPage extends State<LoginPage> {
     return MaterialApp(
       title: 'Login Page',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Login Page'),
-        ),
         body: Center(
           child: isBusy
               ? CircularProgressIndicator()
@@ -162,8 +168,8 @@ class _LoginPage extends State<LoginPage> {
         AUTH0_REDIRECT_URI,
         issuer: 'https://$AUTH0_DOMAIN',
         scopes: ['openid', 'profile', 'offline_access'],
-      ) //promptValues: ['login']),
-              );
+        promptValues: ['login'],
+      ));
 
       final idToken = parseIdToken(result.idToken);
       final userProfile = await getUserDetails(result.accessToken);
@@ -177,7 +183,7 @@ class _LoginPage extends State<LoginPage> {
         name = idToken['name'];
         picture = userProfile['picture'];
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Problems()));
+            context, MaterialPageRoute(builder: (context) => DistancePage()));
       });
     } catch (e, s) {
       print('error: $e - stack: $s');
