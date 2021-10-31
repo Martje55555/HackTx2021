@@ -79,7 +79,7 @@ class Login extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Welcome To blah blah",
+                "Welcome To Space Travel",
                 style: TextStyle(fontSize: 48, color: Colors.white),
                 textAlign: TextAlign.center,
               ),
