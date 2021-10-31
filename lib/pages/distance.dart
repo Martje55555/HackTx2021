@@ -80,7 +80,10 @@ class _DistancePage extends State<DistancePage> {
                 children: [
                   DropdownButton<String>(
                     value: dropDownValue,
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
                     onChanged: (String? newvalue) {
                       setState(() {
                         dropDownValue = newvalue!;
@@ -125,8 +128,10 @@ class _DistancePage extends State<DistancePage> {
                             value: value,
                             child: Text(
                               value,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
                             ),
                           );
                         },
