@@ -8,6 +8,8 @@ import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import './problems.dart';
 
+import '../global.dart' as globals;
+
 final FlutterAppAuth appAuth = FlutterAppAuth();
 final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
 
@@ -100,11 +102,11 @@ class LoginPage extends StatefulWidget {
 /// -----------------------------------
 
 class _LoginPage extends State<LoginPage> {
-  bool isBusy = false;
-  bool isLoggedIn = false;
-  String errorMessage = "";
-  String name = "";
-  String picture = "";
+  bool isBusy = globals.isWhat;
+  bool isLoggedIn = globals.isWhat;
+  String errorMessage = globals.empty;
+  String name = globals.empty;
+  String picture = globals.empty;
 
   @override
   Widget build(BuildContext context) {
@@ -156,13 +158,10 @@ class _LoginPage extends State<LoginPage> {
     try {
       final AuthorizationTokenResponse result =
           await appAuth.authorizeAndExchangeCode(
-        AuthorizationTokenRequest(
-          AUTH0_CLIENT_ID,
-          AUTH0_REDIRECT_URI,
-          issuer: 'https://$AUTH0_DOMAIN',
-          scopes: ['openid', 'profile', 'offline_access'],
-          // promptValues: ['login']
-        ),
+        AuthorizationTokenRequest(AUTH0_CLIENT_ID, AUTH0_REDIRECT_URI,
+            issuer: 'https://$AUTH0_DOMAIN',
+            scopes: ['openid', 'profile', 'offline_access'],
+            promptValues: ['login']),
       );
 
       final idToken = parseIdToken(result.idToken);
