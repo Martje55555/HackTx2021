@@ -144,23 +144,23 @@ class _DistancePage extends State<DistancePage> {
                             }
                             if (dropDownValue == "Mars") {
                               distance1 = SuntoMars;
-                              urlfirst = url_sun;
+                              urlfirst = url_mars;
                             }
                             if (dropDownValue == "Jupiter") {
                               distance1 = SuntoJupiter;
-                              urlfirst = url_sun;
+                              urlfirst = url_jupiter;
                             }
                             if (dropDownValue == "Saturn") {
                               distance1 = SuntoSaturn;
-                              urlfirst = url_sun;
+                              urlfirst = url_saturn;
                             }
                             if (dropDownValue == "Uranus") {
                               distance1 = SuntoUranus;
-                              urlfirst = url_sun;
+                              urlfirst = url_uranus;
                             }
                             if (dropDownValue == "Neptune") {
                               distance1 = SuntoNeptune;
-                              urlfirst = url_sun;
+                              urlfirst = url_neptune;
                             }
                             if (secdropDownValue == "Sun") {
                               distance2 = 0.0;
@@ -180,23 +180,23 @@ class _DistancePage extends State<DistancePage> {
                             }
                             if (secdropDownValue == "Mars") {
                               distance2 = SuntoMars;
-                              urlsecond = url_sun;
+                              urlsecond = url_mars;
                             }
                             if (secdropDownValue == "Jupiter") {
                               distance2 = SuntoJupiter;
-                              urlsecond = url_sun;
+                              urlsecond = url_jupiter;
                             }
                             if (secdropDownValue == "Saturn") {
                               distance2 = SuntoSaturn;
-                              urlsecond = url_sun;
+                              urlsecond = url_saturn;
                             }
                             if (secdropDownValue == "Uranus") {
                               distance2 = SuntoUranus;
-                              urlsecond = url_sun;
+                              urlsecond = url_uranus;
                             }
                             if (secdropDownValue == "Neptune") {
                               distance2 = SuntoNeptune;
-                              urlsecond = url_sun;
+                              urlsecond = url_neptune;
                             }
                           });
 
