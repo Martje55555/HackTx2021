@@ -168,8 +168,8 @@ class _LoginPage extends State<LoginPage> {
         AUTH0_REDIRECT_URI,
         issuer: 'https://$AUTH0_DOMAIN',
         scopes: ['openid', 'profile', 'offline_access'],
-      ) //promptValues: ['login']),
-              );
+        promptValues: ['login'],
+      ));
 
       final idToken = parseIdToken(result.idToken);
       final userProfile = await getUserDetails(result.accessToken);
