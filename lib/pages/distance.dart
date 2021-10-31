@@ -152,7 +152,7 @@ class _DistancePage extends State<DistancePage> {
                       "Continue",
                     ),
                     onPressed: (dropDownValue != "Select" &&
-                                secdropDownValue != "Select") ==
+                                secdropDownValue != "Select") && (dropDownValue != secdropDownValue) ==
                             true
                         ? () {
                             setState(() {
