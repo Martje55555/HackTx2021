@@ -157,12 +157,13 @@ class _LoginPage extends State<LoginPage> {
 
     try {
       final AuthorizationTokenResponse result =
-          await appAuth.authorizeAndExchangeCode(
-        AuthorizationTokenRequest(AUTH0_CLIENT_ID, AUTH0_REDIRECT_URI,
-            issuer: 'https://$AUTH0_DOMAIN',
-            scopes: ['openid', 'profile', 'offline_access'],
-            promptValues: ['login']),
-      );
+          await appAuth.authorizeAndExchangeCode(AuthorizationTokenRequest(
+        AUTH0_CLIENT_ID,
+        AUTH0_REDIRECT_URI,
+        issuer: 'https://$AUTH0_DOMAIN',
+        scopes: ['openid', 'profile', 'offline_access'],
+      ) //promptValues: ['login']),
+              );
 
       final idToken = parseIdToken(result.idToken);
       final userProfile = await getUserDetails(result.accessToken);
